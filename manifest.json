@@ -1,11 +1,8 @@
 {
-    //manifest spec: http://developer.chrome.com/extensions/manifest.html
-    //required
     "name": "Click Bait Detector",
     "version": "1.0",
     "manifest_version": 2,
 
-    //recommended
     "description": "Finding those pesky click bait articles",
     "icons": {
         "19": "images/icon_19.png",
@@ -15,21 +12,26 @@
 
     "content_scripts": [
         {
-            "matches": ["https://www.google.com/*"],
-            "js": ["js/client.js"]
+            "matches": ["<all_urls>"],
+            "js": ["client.js"]
         }
     ],
 
-    //required
+    "permissions": [
+        "tabs",
+        "storage",
+        "http://*/",
+        "https://*/"
+    ],
+
     "browser_action": {
         "default_title": "browser_action: default_title",
         "default_icon": {
             "19": "images/icon_19.png",
             "38": "images/icon_38.png"
         },
-        "default_popup": "html/popup.html"
+        "default_popup": "popup.html"
     },
 
-    //additional
     "homepage_url": "http://yourdomainhere.com/"
 }

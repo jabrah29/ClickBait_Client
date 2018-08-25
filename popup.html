@@ -1,19 +1,36 @@
+
 <html>
-<head>
-	<title>My First Chrome Extension</title>
-	<style>
-		#popup{
-			width:300px;
-			height:200px;
-			text-align:center;
-			line-height:200px;
-		}
-	</style>
-	 <script type="text/javascript" src="js/client.js"></script>
-</head>
-<body>
-	<div id="popup">
-		<button type="button">Click Me!</button>
-	</div>
-</body>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>My First Chrome ExtensionMy First Chrome </title>
+    <style type="text/css">
+      body{
+       width:300px;
+       height:100px;
+       padding-top: 10px;
+       padding-right: 10px;
+       padding-bottom: 10px;
+       padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id ="title">
+      <h2>Click Bait Detector</h2>
+    </div>
+    <div class="bs-example" id="form">
+      <form id="input">
+        <div class="form-group">
+          <label for="inputEmail">Enter name of article</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Title Name" required>
+          </div>
+            <div class="checkbox">
+              <label><input type="checkbox"> Show % confidence</label>
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script src="client.js"></script>
 </html>
