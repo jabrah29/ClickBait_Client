@@ -5,18 +5,13 @@ function handleInput() {
 document.getElementById('input').onclick = handleInput;
 
 
-function sendToServer(){
-  $.ajax({
-  //The URL to process the request
-    'url' : '/titles',
-    'type' : 'GET',
-    'data' : {
-      'title' : title
-    },
-    'success' : function(data) {
-      if (data == "success") {
-        alert('request sent!');
-      }
-    }
-  });
+function sendToServer(title){
+	console.log("here")
+	$.post(
+	    "https://fe1a11af.ngrok.io/title",
+	    {title : title},
+	    function(data) {
+	       alert('page content: ' + data);
+	    }
+	);
 }
